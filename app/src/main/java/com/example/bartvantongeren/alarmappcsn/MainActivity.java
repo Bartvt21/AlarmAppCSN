@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
@@ -42,11 +43,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void connectionLost(Throwable cause) {
                 System.out.println("The Connection was lost.");
+                TextView t = (TextView) findViewById(R.id.alarmStatus);
+                t.setText("Niet actief");
             }
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
                 System.out.println("Incoming message: " + new String(message.getPayload()));
+                TextView t = (TextView) findViewById(R.id.alarmStatus);
+                t.setText("Actief");
             }
 
             @Override
@@ -99,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
     public void disarmAlarm(View v){
         String topic = publishTopic;
         String message = "disarm";
+        TextView t = (TextView) findViewById(R.id.alarmStatus);
+        t.setText("Niet actief");
         try {
             MQTTClient.publish(topic, message.getBytes(), 0, false);
         } catch (MqttException e) {

@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="41dp"
-        android:text="Welkom in de alarm"
+        android:text="Welkom in de alarm app"
         android:textColor="@android:color/background_dark"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +63,30 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:text="Zet alarm uit"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="180dp"
+        android:text="Status alarm:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/alarmStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="180dp"
+        android:text=""
         android:textColor="@android:color/background_dark"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
